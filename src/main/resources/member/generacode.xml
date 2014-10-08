@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<properties resource="member/generacode.properties" />
+	<!-- classPathEntry:数据库的JDBC驱动,换成你自己的驱动位置 -->
+	<classPathEntry location="${jdbcHome}" />
+	<context id="MBG" targetRuntime="MyBatis3" defaultModelType="conditional">
+		<plugin type="com.glaciersoft.code.plugin.PaginationPlugin"></plugin>
+		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+		<plugin type="org.mybatis.generator.plugins.MapperConfigPlugin">
+			<property name="fileName" value="mybatis-config.xml" />
+			<property name="targetPackage" value="${mapperConfigPackage}" />
+			<property name="targetProject" value="${targetProject}" />
+		</plugin>
+
+		<commentGenerator>
+			<!-- 去除自动生成的注释 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="${driverClass}"
+			connectionURL="${connectionURL}" userId="${userId}" password="${password}">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- targetProject:自动生成代码的位置 -->
+		<javaModelGenerator targetPackage="${modelPackage}" targetProject="${targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="${sqlMapperPackage}" targetProject="${targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER" targetPackage="${daoMapperPackage}" targetProject="${targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+
+		<table tableName="t_member" domainObjectName="Member" alias="temp_member"/>
+		<table tableName="t_member_apply_amount" domainObjectName="MemberApplyAmount" alias="temp_member_apply_amount"/>
+		<table tableName="t_member_auth" domainObjectName="MemberAuth" alias="temp_member_auth"/>
+		<table tableName="t_member_credit_integral" domainObjectName="MemberCreditIntegral" alias="temp_member_credit_integral"/>
+		<table tableName="t_member_estate" domainObjectName="MemberEstate" alias="temp_member_estate"/>
+		<table tableName="t_member_finance" domainObjectName="MemberFinance" alias="temp_member_finance"/>
+		<table tableName="t_member_integral" domainObjectName="MemberIntegral" alias="temp_member_integral"/>
+		<table tableName="t_member_statistics" domainObjectName="MemberStatistics" alias="temp_member_statistics"/>
+		<table tableName="t_member_token" domainObjectName="MemberToken" alias="temp_member_token"/>
+		<table tableName="t_member_vip" domainObjectName="MemberVip" alias="temp_member_vip"/>
+		<table tableName="t_member_work" domainObjectName="MemberWork" alias="temp_member_work"/> 
+		<table tableName="t_member_message_notice" domainObjectName="MemberMessageNotice" alias="temp_member_message_notice"/>
+		<table tableName="t_member_secret_security" domainObjectName="MemberSecretSecurity" alias="temp_member_secret_security"/>
+	</context>
+</generatorConfiguration>  
