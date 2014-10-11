@@ -55,6 +55,7 @@
 		<table tableName="t_carrier_member_grade" domainObjectName="CarrierMemberGrade" alias="temp_carrier_member_grade"/>
 		<table tableName="t_carrier_member_token" domainObjectName="CarrierMemberToken" alias="temp_carrier_member_token"/>
 		<table tableName="t_carrier_route" domainObjectName="CarrierRoute" alias="temp_carrier_route"/>
+		<table tableName="t_carrier_member_creditworthiness" domainObjectName="CarrierMemberCreditworthiness" alias="temp_carrier_member_creditworthiness"/>
 		
 		
 	</context>

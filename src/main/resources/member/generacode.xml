@@ -50,5 +50,6 @@
 		<table tableName="t_shipper_member_contract_record" domainObjectName="ShipperMemberContractRecord" alias="temp_shipper_member_contract_record"/>
 		<table tableName="t_shipper_member_grade" domainObjectName="ShipperMemberGrade" alias="temp_shipper_member_grade"/>
 		<table tableName="t_shipper_member_token" domainObjectName="ShipperMemberToken" alias="temp_shipper_member_token"/>
+		<table tableName="t_shipper_member_integral" domainObjectName="ShipperMemberIntegral" alias="temp_shipper_member_integral"/>
 	</context>
 </generatorConfiguration>  
