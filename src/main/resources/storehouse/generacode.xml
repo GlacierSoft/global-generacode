@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<properties resource="storehouse/generacode.properties" />
+	<!-- classPathEntry:数据库的JDBC驱动,换成你自己的驱动位置 -->
+	<classPathEntry location="${jdbcHome}" />
+	<context id="MBG" targetRuntime="MyBatis3" defaultModelType="conditional">
+		<plugin type="com.glaciersoft.code.plugin.PaginationPlugin"></plugin>
+		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+		<plugin type="org.mybatis.generator.plugins.MapperConfigPlugin">
+			<property name="fileName" value="mybatis-config.xml" />
+			<property name="targetPackage" value="${mapperConfigPackage}" />
+			<property name="targetProject" value="${targetProject}" />
+		</plugin>
+
+		<commentGenerator>
+			<!-- 去除自动生成的注释 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="${driverClass}"
+			connectionURL="${connectionURL}" userId="${userId}" password="${password}">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- targetProject:自动生成代码的位置 -->
+		<javaModelGenerator targetPackage="${modelPackage}" targetProject="${targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="${sqlMapperPackage}" targetProject="${targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER" targetPackage="${daoMapperPackage}" targetProject="${targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+
+		<table tableName="t_storehouse_belaidup" domainObjectName="StorehouseBelaidup" alias="temp_storehouse_belaidup"/>
+		<table tableName="t_storehouse_damage" domainObjectName="StorehouseDamage" alias="temp_storehouse_damage"/>
+		<table tableName="t_storehouse_goodstype_set" domainObjectName="StorehouseGoodstypeSet" alias="temp_storehouse_goodstype_set"/>
+		<table tableName="t_storehouse_pack_code" domainObjectName="StorehousePackCode" alias="temp_storehouse_pack_code"/>
+		<table tableName="t_storehouse_packagetype_set" domainObjectName="StorehousePackagetypeSet" alias="temp_storehouse_packagetype_set"/>
+		<table tableName="t_storehouse_return_applications" domainObjectName="StorehouseReturnApplications" alias="temp_storehouse_return_applications"/>
+		<table tableName="t_storehouse_storage" domainObjectName="StorehouseStorage" alias="temp_storehouse_storage"/>
+		<table tableName="t_storehouse_storage_goodsrun" domainObjectName="StorehouseStorageGoodsrun" alias="temp_storehouse_storage_goodsrun"/>
+		<table tableName="t_storehouse_storage_repair" domainObjectName="StorehouseStorageRepair" alias="temp_storehouse_storage_repair"/>
+		<table tableName="t_storehouse_storagetype_set" domainObjectName="StorehouseStoragetypeSet" alias="temp_storehouse_storagetype_set"/>
+		
+		
+	</context>
+</generatorConfiguration>  
