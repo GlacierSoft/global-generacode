@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<properties resource="finace/generacode.properties" />
+	<!-- classPathEntry:数据库的JDBC驱动,换成你自己的驱动位置 -->
+	<classPathEntry location="${jdbcHome}" />
+	<context id="MBG" targetRuntime="MyBatis3" defaultModelType="conditional">
+		<plugin type="com.glaciersoft.code.plugin.PaginationPlugin"></plugin>
+		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+		<plugin type="org.mybatis.generator.plugins.MapperConfigPlugin">
+			<property name="fileName" value="mybatis-config.xml" />
+			<property name="targetPackage" value="${mapperConfigPackage}" />
+			<property name="targetProject" value="${targetProject}" />
+		</plugin>
+
+		<commentGenerator>
+			<!-- 去除自动生成的注释 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="${driverClass}"
+			connectionURL="${connectionURL}" userId="${userId}" password="${password}">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- targetProject:自动生成代码的位置 -->
+		<javaModelGenerator targetPackage="${modelPackage}" targetProject="${targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="${sqlMapperPackage}" targetProject="${targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER" targetPackage="${daoMapperPackage}" targetProject="${targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+        <table tableName="t_finace_recharge_member" domainObjectName="FinaceRechargeMember" alias="temp_finace_recharge_member"/>
+		<table tableName="t_finace_recharge_set_member" domainObjectName="FinaceRechargeSetMember" alias="temp_finace_recharge_set_member"/>
+		<table tableName="t_finace_withdraw_member" domainObjectName="FinaceWithdrawMember" alias="tempfinace_withdraw_member"/>
+		<table tableName="t_finace_withdraw_set_memberr" domainObjectName="FinaceWithdrawSetMemberr" alias="temp_finace_withdraw_set_memberr"/>
+		<table tableName="t_finace_recharge_carrier" domainObjectName="FinaceRechargeCarrier" alias="temp_finace_recharge_carrier"/>
+		<table tableName="t_finace_recharge_set_carrier" domainObjectName="FinaceRechargeSetCarrier" alias="temp_finace_recharge_set_carrier"/>
+		<table tableName="t_finace_withdraw_carrier" domainObjectName="FinaceWithdrawCarrier" alias="temp_finace_withdraw_carrier"/>
+		<table tableName="t_finace_withdraw_set_carrier" domainObjectName="FinaceWithdrawSetCarrier" alias="temp_finace_withdraw_set_carrier"/>
+		<table tableName="t_finance_carrier" domainObjectName="FinanceCarrier" alias="temp_finance_carrier"/>
+		<table tableName="t_finance_member" domainObjectName="FinanceMember" alias="temp_finance_member"/>
+		<table tableName="t_finance_platform" domainObjectName="FinancePlatform" alias="temp_finance_platform"/>
+		<table tableName="t_finance_carrier_detail" domainObjectName="FinanceCarrierDetail" alias="temp_finance_carrier_detail"/>
+		<table tableName="t_finance_member_detail" domainObjectName="FinanceMemberDetail" alias="temp_finance_member_detail"/>
+		<table tableName="t_finance_platform_detail" domainObjectName="FinancePlatformDetail" alias="temp_finance_platform_detail"/>
+		
+	</context>
+</generatorConfiguration>  
