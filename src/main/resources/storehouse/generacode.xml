@@ -53,7 +53,7 @@
 		<table tableName="t_storehouse_storage_goodsrun" domainObjectName="StorehouseStorageGoodsrun" alias="temp_storehouse_storage_goodsrun"/>
 		<table tableName="t_storehouse_storage_repair" domainObjectName="StorehouseStorageRepair" alias="temp_storehouse_storage_repair"/>
 		<table tableName="t_storehouse_storagetype_set" domainObjectName="StorehouseStoragetypeSet" alias="temp_storehouse_storagetype_set"/>
-		
+		<table tableName="t_storehouse_template" domainObjectName="StorehouseTemplate" alias="temp_storehouse_template"/>
 		
 	</context>
 </generatorConfiguration>  

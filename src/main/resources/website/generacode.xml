@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-	<properties resource="orders/generacode.properties" />
+	<properties resource="website/generacode.properties" />
 	<!-- classPathEntry:数据库的JDBC驱动,换成你自己的驱动位置 -->
 	<classPathEntry location="${jdbcHome}" />
 	<context id="MBG" targetRuntime="MyBatis3" defaultModelType="conditional">
@@ -42,11 +42,6 @@
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
 
-
-		<table tableName="t_orders_dispatching" domainObjectName="OrdersDispatching" alias="temp_orders_dispatching"/>
-		<table tableName="t_orders_order" domainObjectName="OrdersOrder" alias="temp_orders_order"/>
-		<table tableName="t_orders_order_info" domainObjectName="OrdersOrderInfo" alias="temp_orders_order_info"/>
-		<table tableName="t_orders_ordispatching_detailed" domainObjectName="OrdersOrdispatchingDetailed" alias="temp_orders_ordispatching_detailed"/>
-		<table tableName="t_orders_tracking" domainObjectName="OrdersTracking" alias="temp_orders_tracking"/>
+		<table tableName="t_website_feedback" domainObjectName="WebsiteFeedback" alias="temp_website_feedback"/>
 	</context>
 </generatorConfiguration>  
