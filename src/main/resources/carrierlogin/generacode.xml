@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<properties resource="carrierlogin/generacode.properties" />
+	<!-- classPathEntry:数据库的JDBC驱动,换成你自己的驱动位置 -->
+	<classPathEntry location="${jdbcHome}" />
+	<context id="MBG" targetRuntime="MyBatis3" defaultModelType="conditional">
+		<plugin type="com.glaciersoft.code.plugin.PaginationPlugin"></plugin>
+		<plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin" />
+		<plugin type="org.mybatis.generator.plugins.MapperConfigPlugin">
+			<property name="fileName" value="mybatis-config.xml" />
+			<property name="targetPackage" value="${mapperConfigPackage}" />
+			<property name="targetProject" value="${targetProject}" />
+		</plugin>
+
+		<commentGenerator>
+			<!-- 去除自动生成的注释 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="${driverClass}"
+			connectionURL="${connectionURL}" userId="${userId}" password="${password}">
+		</jdbcConnection>
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- targetProject:自动生成代码的位置 -->
+		<javaModelGenerator targetPackage="${modelPackage}" targetProject="${targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="${sqlMapperPackage}" targetProject="${targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER" targetPackage="${daoMapperPackage}" targetProject="${targetProject}">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+
+<!-- 		<table tableName="t_carrierlogin_among_route" domainObjectName="carrierloginAmongRoute" alias="temp_carrierlogin_among_route"/> -->
+<!-- 		<table tableName="t_carrierlogin_bank_card" domainObjectName="carrierloginBankCard" alias="temp_carrierlogin_bank_card"/> -->
+<!-- 		<table tableName="t_carrierlogin_car_information" domainObjectName="carrierloginCarInformation" alias="temp_carrierlogin_car_information"/> -->
+<!-- 		<table tableName="t_carrierlogin_contract_record" domainObjectName="carrierloginContractRecord" alias="temp_carrierlogin_contract_record"/> -->
+<!-- 		<table tableName="t_carrierlogin_creditworthiness_type" domainObjectName="carrierloginCreditworthinessType" alias="temp_carrierlogin_creditworthiness_type"/> -->
+<!-- 		<table tableName="t_carrierlogin_driver" domainObjectName="carrierloginDriver" alias="temp_carrierlogin_driver"/> -->
+<!-- 		<table tableName="t_carrierlogin_enterpriser_member" domainObjectName="carrierloginEnterpriserMember" alias="temp_carrierlogin_enterpriser_member"/> -->
+<!-- 		<table tableName="t_carrierlogin_individuality_member" domainObjectName="carrierloginIndividualityMember" alias="temp_carrierlogin_individuality_member"/> -->
+<!-- 		<table tableName="t_carrierlogin_member" domainObjectName="carrierloginMember" alias="temp_carrierlogin_member"/> -->
+<!-- 		<table tableName="t_carrierlogin_member_grade" domainObjectName="carrierloginMemberGrade" alias="temp_carrierlogin_member_grade"/> -->
+<!-- 		<table tableName="t_carrierlogin_member_token" domainObjectName="carrierloginMemberToken" alias="temp_carrierlogin_member_token"/> -->
+<!-- 		<table tableName="t_carrierlogin_route" domainObjectName="carrierloginRoute" alias="temp_carrierlogin_route"/> -->
+<!-- 		<table tableName="t_carrierlogin_member_creditworthiness" domainObjectName="carrierloginMemberCreditworthiness" alias="temp_carrierlogin_member_creditworthiness"/> -->
+		
+		<table tableName="t_carrierlogin_action" domainObjectName="CarrierloginAction" alias="temp_carrierlogin_action"/>
+		<table tableName="t_carrierlogin_authority" domainObjectName="CarrierloginAuthority" alias="temp_carrierlogin_authority"/>
+		<table tableName="t_carrierlogin_loginlog" domainObjectName="CarrierloginLoginlog" alias="temp_carrierlogin_loginlog"/>
+		<table tableName="t_carrierlogin_menu" domainObjectName="CarrierloginMenu" alias="temp_carrierlogin_menu"/>
+		<table tableName="t_carrierlogin_operalog" domainObjectName="CarrierloginOperalog" alias="temp_carrierlogin_operalog"/>
+		<table tableName="t_carrierlogin_panel" domainObjectName="CarrierloginPanel" alias="temp_carrierlogin_panel"/>
+		<table tableName="t_carrierlogin_role" domainObjectName="CarrierloginRole" alias="temp_carrierlogin_role"/>
+		<table tableName="t_carrierlogin_user" domainObjectName="CarrierloginUser" alias="temp_carrierlogin_user"/>
+		<table tableName="t_carrierlogin_user_role" domainObjectName="CarrierloginUserRole" alias="temp_carrierlogin_user_role"/>
+		
+	</context>
+</generatorConfiguration>  
